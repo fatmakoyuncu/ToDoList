@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../todo';
+import { TodoService } from '../todo.service';
+
 
 
 @Component({
@@ -9,28 +10,21 @@ import { Todo } from '../todo';
 })
 export class TodosComponent implements OnInit {
 
-  todos: Todo[];
-
   inputTodo:string = "";
 
-  constructor() { }
+  todosko: any;
 
-  ngOnInit(): void {
-
-    this.todos = [
-      {
-        content:'First todo',
-        completed:false
-      },
-      {
-        content:'Second todo',
-        completed:false
-      }
-    ]
+  constructor(private todoService: TodoService) { 
+    this.todosko = todoService.todos;
   }
 
+  ngOnInit(): void {  
+    
+  }
+  
+
   toggleDone (id) {
-    this.todos.map((v, i) => {
+    this.todosko.map((v, i) => {
       if(i == id) v.completed = !v.completed;
 
       return v;
@@ -38,19 +32,17 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo (id) {
-    this.todos = this.todos.filter((v, i) => i !== id);
-    console.log(this.todos);
+    this.todosko = this.todosko.filter((v, i) => i !== id);
+    console.log(this.todoService.todos);
     
   }
 
   addTodo () {
-   
-    this.todos.push({
+    this.todoService.todos.push({
       content: this.inputTodo,
       completed: false
     });
 
-    // this.todos.reverse();
     this.inputTodo = "";
 
     

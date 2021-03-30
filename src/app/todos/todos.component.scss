@@ -1,103 +1,164 @@
 .todos{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     background: rgb(242, 242, 245);
     height: 100%;
 
     .header{
-        margin: 20px;
-        background: #6cc1fa;
-        padding-left: 100px;
-        padding-right: 100px;
+        display: flex;
+        justify-content: center;
+        background: #729cb8;
+        opacity: 0.8;
         margin-bottom: 50px;
-        border-radius: 50px;
+        border-radius: 0px 0px 55px 55px;
 
         h1{
             color: cornsilk;
+            margin: 15px;
         }
     }
 
-    .todos-in{
-
+    .container{
         display: flex;
-        flex-direction: column;
         align-items: center;
-        background: rgb(255, 255, 255, 0.4);
-        padding: 30px;
-        width: 700px;
-        height: 500px;
-        border-radius: 20px;
+        justify-content: space-between;
+        margin: 0px 200px;
 
-        form{
+        .todos-in{
+
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 50px;
-    
-            input{
-                outline: 0;
-                border-width: 0 0 2px;
-                border-color: rgb(161, 157, 157);
-                height: 40px;
-                width: 400px;
-                padding: 10px;
-                font-size: 18px;
-                background: rgb(242, 242, 245);
-                border-radius: 10px
-            }:focus{
-                border-color: #1976D2;
-            }
-    
-            button{
-                background: transparent;
-                outline: none;
-                border: none;   
+            background: rgb(255, 255, 255);
+            padding: 30px;
+            width: 700px;
+            height: 500px;
+            border-radius: 20px;
 
-                svg{
-                    fill: #ad981f;
+    
+            form{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 50px;
+        
+                input{
+                    outline: 0;
+                    border-width: 0 0 2px;
+                    height: 40px;
+                    width: 400px;
+                    padding: 10px;
+                    font-size: 18px;
+    
+                }:focus{
+                    border-color: #1976D2;
                 }
-                :hover{
-                    cursor: pointer;
-                    fill: #dbc43e;
+        
+                button{
+                    background: transparent;
+                    outline: none;
+                    border: none;   
+    
+                    svg{
+                        fill: #ad981f;
+                    }
+                    :hover{
+                        cursor: pointer;
+                        fill: #dbc43e;
+                    }
+                }
+                
+            }
+        
+            .todoskolarım{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                width: 100%;
+    
+               
+    
+                .in{
+                    display: flex;
+    
+                    .point{
+                        margin: 10px;
+                        :hover{
+                            fill: green;
+                        }
+                    }
+            
+                    .content{
+                        font-size: 25px;
+                        font-family:Georgia, 'Times New Roman', Times, serif;
+                        margin: 10px;
+                        min-width: 400px;
+                    }
+                    
+                    :hover{
+                        cursor: pointer;
+                    }
+            
+                    .delete{
+                        border: none;
+                        background: transparent;
+                        outline: none;
+    
+                        :hover{
+                            cursor: pointer;
+                            fill: red;
+                        }
+                    }
+                    
                 }
             }
-            
         }
-    
-        .todo{
+
+        .container-in{
             display: flex;
-            align-items: center;
-            width: 100%;
-            margin-left: 150px;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+       
 
-            .point{
-                margin: 10px;
-                :hover{
-                    fill: green;
+            .weekly{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                padding: 40px;
+                margin: 5px;
+                border-radius: 10%;
+                width: 150px;
+
+                p{
+                    font-size: 20px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                    margin-top: 30px;
                 }
+            }:hover{
+                cursor: pointer;
             }
-            
 
-    
-            .content{
-                font-size: 25px;
-                font-family:Georgia, 'Times New Roman', Times, serif;
-                margin: 10px;
-                min-width: 400px;
-            }
-            :hover{
+            .monthly{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                padding: 40px;
+                margin: 5px;
+                border-radius: 10%;
+                width: 150px;
+
+                p{
+                    font-size: 20px;
+                    font-family:Georgia, 'Times New Roman', Times, serif;
+                }
+            }:hover{
                 cursor: pointer;
-            }
-    
-            .delete{
-                border: none;
-                background: transparent;
-                outline: none;
-            }
-            :hover{
-                cursor: pointer;
-                fill: red;
             }
         }
     }
@@ -105,17 +166,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-.todo.done .content{
+.in.done .content{
+   
     text-decoration: line-through;
-    color: red;
+    color: rgb(168, 5, 5);
+
 }

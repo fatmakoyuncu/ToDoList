@@ -4,15 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
+import { WeeklyComponent } from './weekly/weekly.component';
+import { MonthlyComponent } from './monthly/monthly.component';
+import {RouterModule, Routes } from '@angular/router';
+
+const routes:Routes=[
+  {path:"", component:TodosComponent},
+  {path:"weekly", component:WeeklyComponent},
+  {path:"monthly", component:MonthlyComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent
+    TodosComponent,
+    WeeklyComponent,
+    MonthlyComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
