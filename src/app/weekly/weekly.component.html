@@ -1,1 +1,19 @@
-<p>weekly works!</p>
+<div class="container">
+    <div class="header">
+        <h2>WEEKLY</h2>
+    </div>
+
+    <div class="card">
+        <div class="weeks">
+            <div class="week">
+                <div class="head" *ngFor="let i of index">
+                    <div class="h3">{{result-i}}. Week</div>
+                    <div class="body" >
+                    <div *ngFor="let d of day; let i=index">
+                        <div class="day"><span>{{d}}</span>{{days[i]}}</div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>

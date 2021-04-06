@@ -39,6 +39,7 @@ export class TodosComponent implements OnInit {
 
   addTodo () {
     this.todoService.todos.push({
+      date: new Date(),
       content: this.inputTodo,
       completed: false
     });
@@ -48,6 +49,7 @@ export class TodosComponent implements OnInit {
     
   }
 
+  
 
 
 }

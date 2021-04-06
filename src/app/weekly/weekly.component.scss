@@ -1,0 +1,80 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header{
+        font-size: 20px;
+    }
+
+    .card{
+        display: flex;
+        width: 100%;
+        height: 80%;
+
+        .weeks{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            padding-top: 0px;
+
+            .week{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+
+                .head{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 30px;
+
+                    .h3{
+                        display: flex;
+                        margin-right: 50px;
+                        font-size: 30px; 
+                       
+                    }
+
+                    .body{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        background: rgb(223, 235, 252);
+                        box-shadow: 0 2px 4px rgb(128, 128, 128);
+                        border-radius: 30px;
+                        width: 60%;
+                        padding: 20px;
+                        margin: 10px;
+                        margin-bottom: 20px;
+                        margin-right: 50px;
+                        font-size: 20px;
+
+                        .day{
+                            display: flex;
+                            max-width: 19px;
+                            overflow: hidden;
+                            background-color: #637d9b;
+                            border-left:8px #1b1a66 solid;
+                            padding: 4px;
+                            color: #FFFFFF;
+                            transition: max-width 1s ease;
+                            font:22px times;
+                            letter-spacing: 10px;
+                            margin-bottom: 30px;
+    
+                            span{color:#ffffff; display:block;}
+    
+                        }:hover {max-width: 220px;
+                        border-radius: 0px 15px 15px 0px;}
+                    }
+                }
+            }
+        }
+    }
+}
