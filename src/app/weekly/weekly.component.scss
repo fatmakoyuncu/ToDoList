@@ -38,21 +38,25 @@
                         display: flex;
                         margin-right: 50px;
                         font-size: 30px; 
-                       
+                        background: rgb(73, 109, 163);
+                        padding: 50px;
+                        border-radius: 10%;
+                        color: white;
                     }
 
                     .body{
                         display: flex;
                         flex-direction: column;
-                        justify-content: center;
+                        // justify-content: space-between;
+                        // height: 200px;
                         background: rgb(223, 235, 252);
                         box-shadow: 0 2px 4px rgb(128, 128, 128);
                         border-radius: 30px;
-                        width: 60%;
+                        width: 40%;
                         padding: 20px;
                         margin: 10px;
                         margin-bottom: 20px;
-                        margin-right: 50px;
+                        // margin-right: 50px;
                         font-size: 20px;
 
                         .day{
@@ -66,7 +70,7 @@
                             transition: max-width 1s ease;
                             font:22px times;
                             letter-spacing: 10px;
-                            margin-bottom: 30px;
+                            margin-bottom: 10px;
     
                             span{color:#ffffff; display:block;}
     
