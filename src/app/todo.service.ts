@@ -16,7 +16,7 @@ export class TodoService {
 
   todos: ITodo[] = [
     {
-      date: new Date("Wed Apr 07 2021 12:34:57"),
+      date: new Date("Mon Apr 12 2021 12:34:57"),
       content: 'Ekmek Al',
       completed: false
     },
