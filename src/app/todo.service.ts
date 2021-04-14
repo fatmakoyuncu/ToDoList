@@ -21,13 +21,23 @@ export class TodoService {
       completed: false
     },
     {
-      date: new Date("Mon Apr 05 2021 07:44:57"),
+      date: new Date("Tue   Apr 13 2021 07:44:57"),
       content: 'Ders Çalış',
       completed: false
     },
     {
-      date: new Date("Fri Apr 02 2021 07:44:57"),
+      date: new Date("Fri Apr 22 2021 07:44:57"),
+      content: 'Yazılıma bak',
+      completed: false
+    },
+    {
+      date: new Date("Fri Mar 20 2021 07:44:57"),
       content: 'Yemek Yap',
+      completed: false
+    },
+    {
+      date: new Date("Fri Apr 02 2021 07:44:57"),
+      content: 'Kitap Oku',
       completed: false
     },
     {
@@ -36,12 +46,12 @@ export class TodoService {
       completed: false
     },
     {
-      date: new Date("Tue Mar 13 2021 17:44:57"),
+      date: new Date("Tue Mar 29 2021 17:44:57"),
       content: 'Kahve İç',
       completed: false
     },
     {
-      date: new Date("Tue Mar 02 2021 07:44:57"),
+      date: new Date("Mon Mar 15 2021 14:25:39"),
       content: 'Yürüyüş Yap',
       completed: false
     }

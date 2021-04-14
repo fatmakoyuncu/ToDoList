@@ -6,14 +6,14 @@
     <div class="card">
         <div class="weeks">
             <div class="week">
-                <div class="head" *ngFor="let i of index">
-                    <div class="h3">{{result-i}}. WEEKS</div>
-                    <div class="body" >
-                    <div *ngFor="let d of day; let i=index">
-                        <div class="day"><span>{{d}}</span>{{days[i]}}</div>                      
+                <div class="head" *ngFor="let t of todo2">
+                    <div class="h3">
+                        {{t.week}}. WEEKS
+                    </div>
+                    <div class="body">
+                        {{t.data}}
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
-</div>

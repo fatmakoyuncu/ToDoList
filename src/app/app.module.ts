@@ -7,6 +7,7 @@ import { TodosComponent } from './todos/todos.component';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { MonthlyComponent } from './monthly/monthly.component';
 import {RouterModule, Routes } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 const routes:Routes=[
   {path:"", component:TodosComponent},
@@ -26,7 +27,7 @@ const routes:Routes=[
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

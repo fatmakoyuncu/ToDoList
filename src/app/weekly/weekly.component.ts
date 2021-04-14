@@ -1,6 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
 import { TodoService } from '../todo.service';
+
 
 @Component({
   selector: 'app-weekly',
@@ -9,60 +10,78 @@ import { TodoService } from '../todo.service';
 })
 export class WeeklyComponent implements OnInit {
 
-  result: number;
-  res= [];
-  result2;
-  today: Date = new Date();
-  dayList: [];
-  index= [0,1,2,3];
-  day = ["M", "T", "W", "T", "F", "S", "S"];
-  days = ["onday", "huesday", "ednesday", "hursday", "riday", "aturday", "unday"]
 
-  constructor(private todoService: TodoService) { }
+  // res= [];
+  // result2;
+  result: number;
+  index = [0, 1, 2, 3];
+  day = ["M", "T", "W", "T", "F", "S", "S"];
+  days = ["onday", "huesday", "ednesday", "hursday", "riday", "aturday", "unday"];
+  weekNumTodo: number;
+  today2: Date = new Date();
+
+  todoObj
+
+  // Bugünün tarihini alıyoruz
+  today: Date = new Date();
+  // Bulunduğumuz haftanın numarasını buluyoruz
+  // weekNum = this.datePipe.transform(this.today, 'w');
+  // Bulunduğumuz tarihten 30 gün öncesini buluyoruz
+  endDay = new Date(this.today.setDate(this.today.getDate() - 30));
+
+  filterTodo = [];
+
+  todo
+  todo2
+
+  constructor(private todoService: TodoService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
 
-    this.getWeekNumber();
-    this.getDay();
-
-
+    this.getWeekNumber()
+    this.getDay()
+    this.getTodo()
   }
 
-  getWeekNumber(){   
-    const oneJan = new Date(this.today.getFullYear(),0,4);
-    const numOfDays = Math.floor((this.today.valueOf()-oneJan.valueOf())/86400000);
+  getWeekNumber() {
+    const oneJan = new Date(this.today2.getFullYear(), 0, 4);
+    const numOfDays = Math.floor((this.today2.valueOf() - oneJan.valueOf()) / 86400000);
 
-    this.result = Math.ceil((this.today.getDay()+1+numOfDays)/7);
+    this.result = Math.ceil((this.today2.getDay() + 1 + numOfDays) / 7);
     console.log(this.result);
-    // console.log(this.today.toDateString());
-    // console.log(this.today.getDate());
-    
   }
 
-  getDay(){
-
-    for (let i = 0; i < this.todoService.todos.length; i++) {
-      
-      const element = this.todoService.todos[i].date;
-
-      const oneJan1 = new Date(element.getFullYear(),0,4);
-      const numOdDays1 = Math.floor((element.valueOf()-oneJan1.valueOf())/86400000);
-
-
-      this.res[i] = Math.ceil((element.getDay()+1+numOdDays1)/7);
-    
-      
-    }
-    console.log(this.res);
-
-    if (this.res[1] == this.result) {
-      console.log("asd");
-      
-    }
-    
+  getDay() {
+    this.filterTodo = this.todoService.todos.filter(r => r.date > this.endDay)
+    console.log(this.filterTodo);
   }
- 
-  
+
+  getTodo() {
+    this.todo2 = []
+    for (let i = this.result; i > this.result - 4; i--) {
+      this.todo = []
+      this.todoObj = {
+        week: i,
+        data: this.filterTodo.filter(t => {
+          const oneJan = new Date(t.date.getFullYear(), 0, 4);
+          const numOfDays = Math.floor((t.date.valueOf() - oneJan.valueOf()) / 86400000);
+          this.weekNumTodo = Math.ceil((t.date.getDay() + 1 + numOfDays) / 7);
+          if (this.weekNumTodo == i) {
+            this.todo.push(t.content)
+          }
+        })
+      }
+      this.todoObj.data = this.todo
+      this.todo2.push(this.todoObj)
+    }
+    
+    console.log(this.todo2);
+    
+
+  }
+
+
+
 
 
 }
