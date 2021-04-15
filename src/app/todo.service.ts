@@ -16,18 +16,8 @@ export class TodoService {
 
   todos: ITodo[] = [
     {
-      date: new Date("Mon Apr 12 2021 12:34:57"),
-      content: 'Ekmek Al',
-      completed: false
-    },
-    {
       date: new Date("Tue   Apr 13 2021 07:44:57"),
       content: 'Ders Çalış',
-      completed: false
-    },
-    {
-      date: new Date("Fri Apr 22 2021 07:44:57"),
-      content: 'Yazılıma bak',
       completed: false
     },
     {
@@ -36,7 +26,17 @@ export class TodoService {
       completed: false
     },
     {
-      date: new Date("Fri Apr 02 2021 07:44:57"),
+      date: new Date("Fri Apr 11 2021 07:44:57"),
+      content: 'Alışveriş Yap',
+      completed: false
+    },
+    {
+      date: new Date("Fri Apr 05 2021 07:44:57"),
+      content: 'Dikiş',
+      completed: false
+    },
+    {
+      date: new Date("Fri Apr 12 2021 07:44:57"),
       content: 'Kitap Oku',
       completed: false
     },
@@ -51,8 +51,8 @@ export class TodoService {
       completed: false
     },
     {
-      date: new Date("Mon Mar 15 2021 14:25:39"),
-      content: 'Yürüyüş Yap',
+      date: new Date("Tue Mar 1 2021 17:44:57"),
+      content: 'Resim Yap',
       completed: false
     }
   ]
