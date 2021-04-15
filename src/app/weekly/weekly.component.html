@@ -10,10 +10,13 @@
                     <div class="h3">
                         {{t.week}}. WEEKS
                     </div>
-                    <div class="body">
-                        {{t.data}}
+                    <div class="body" *ngFor="let a of t.data">
+                        {{a.content}}
+                        {{a.date | date:'EEEE'}}
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

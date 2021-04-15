@@ -10,16 +10,9 @@ import { TodoService } from '../todo.service';
 })
 export class WeeklyComponent implements OnInit {
 
-
-  // res= [];
-  // result2;
   result: number;
-  index = [0, 1, 2, 3];
-  day = ["M", "T", "W", "T", "F", "S", "S"];
-  days = ["onday", "huesday", "ednesday", "hursday", "riday", "aturday", "unday"];
   weekNumTodo: number;
   today2: Date = new Date();
-
   todoObj
 
   // Bugünün tarihini alıyoruz
@@ -34,6 +27,7 @@ export class WeeklyComponent implements OnInit {
   todo
   todo2
 
+
   constructor(private todoService: TodoService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
@@ -41,6 +35,7 @@ export class WeeklyComponent implements OnInit {
     this.getWeekNumber()
     this.getDay()
     this.getTodo()
+
   }
 
   getWeekNumber() {
@@ -67,7 +62,7 @@ export class WeeklyComponent implements OnInit {
           const numOfDays = Math.floor((t.date.valueOf() - oneJan.valueOf()) / 86400000);
           this.weekNumTodo = Math.ceil((t.date.getDay() + 1 + numOfDays) / 7);
           if (this.weekNumTodo == i) {
-            this.todo.push(t.content)
+            this.todo.push(t)
           }
         })
       }
@@ -76,6 +71,7 @@ export class WeeklyComponent implements OnInit {
     }
     
     console.log(this.todo2);
+    
 
   }
 

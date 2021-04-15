@@ -6,7 +6,10 @@
     <div class="card">
         <div class="weeks" *ngFor="let i of todoWeek">
             <h2>{{i.week}}. Weeks</h2>
-            <p>{{i.data}}</p>
+            <div class="todo" *ngFor="let a of i.data">
+            <p>{{a.content}}</p>
+            <p>{{a.date | date:'EEEE'}}</p>
+        </div>
         </div>
     </div>
 </div>

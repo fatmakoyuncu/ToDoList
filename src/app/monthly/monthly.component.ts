@@ -57,7 +57,7 @@ export class MonthlyComponent implements OnInit {
 
           this.weekNumTodo = Math.ceil((t.date.getDay() + 1 + numOfDays) / 7);
           if (this.weekNumTodo == i) {
-            this.todo.push(t.content)
+            this.todo.push(t)
           }
         })
       }
