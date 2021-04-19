@@ -13,8 +13,6 @@ export class TodosComponent implements OnInit {
   inputTodo:string = "";
 
   todosko: any;
-
-  todo
   
 
   constructor(private todoService: TodoService) { 
