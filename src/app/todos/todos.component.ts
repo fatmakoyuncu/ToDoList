@@ -14,11 +14,16 @@ export class TodosComponent implements OnInit {
 
   todosko: any;
 
+  todo
+  
+
   constructor(private todoService: TodoService) { 
-    this.todosko = todoService.todos;
+   
   }
 
   ngOnInit(): void {  
+    
+    this.todosko = this.todoService.todos.reverse();   
     
   }
   
@@ -33,19 +38,21 @@ export class TodosComponent implements OnInit {
 
   deleteTodo (id) {
     this.todosko = this.todosko.filter((v, i) => i !== id);
-    console.log(this.todoService.todos);
+    console.log(this.todosko);
     
   }
 
   addTodo () {
-    this.todoService.todos.push({
+    
+    this.todosko.reverse().push({
       date: new Date(),
       content: this.inputTodo,
       completed: false
     });
 
     this.inputTodo = "";
-
+    this.ngOnInit()
+    console.log(this.todosko);
     
   }
 

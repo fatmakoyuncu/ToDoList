@@ -71,6 +71,13 @@ export class WeeklyComponent implements OnInit {
     }
     
     console.log(this.todo2);
+
+  }
+
+  deleteTodo(t){
+
+
+    console.log(this.todo2);
     
 
   }

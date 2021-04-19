@@ -1,83 +1,142 @@
 .container{
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #f2f2f5;
 
     .header{
+        display: flex;
+        justify-content: center;
+        background: white;
+        margin-bottom: 30px;
+        border-radius: 0px 0px 55px 55px;
         font-size: 20px;
+        width: 100%;
+        color: rgb(73, 109, 163);
+        font-weight: bold;
     }
 
     .card{
         display: flex;
-        width: 100%;
-        height: 80%;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
 
-        .weeks{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 100%;
-            // padding: 30px;
-            padding-top: 0px;
 
             .week{
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: white;
                 width: 100%;
-                height: 100%;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgb(173, 171, 168);
+                padding: 20px;
+                margin-bottom: 30px;
 
                 .head{
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     height: 100%;
-                    // margin-left: 30px;
+                    width: 100%;
 
                     .h3{
                         display: flex;
-                        margin-right: 50px;
-                        font-size: 30px; 
+                        align-items: center;
+                        
                         background: rgb(73, 109, 163);
-                        padding: 30px;
-                        // margin-bottom: 20px;
-                        border-radius: 7px;
-                        color: white;
+                        padding: 20px;
+                        border-radius: 7px;                       
+                        opacity: 0.8;
+                        width: 90%;
+                        margin: 20px 10px;
+                        
+
+                        h3{
+                            font-size: 30px;
+                            color: rgb(245, 239, 239);
+                            font-weight: bold;
+                            margin: 0px;
+                            margin-left: 30px;
+                        }
                     }
 
                     .body{
                         display: flex;
-                        flex-direction: column;
-                        // justify-content: space-between;
-                        height: 100px;
                         background: rgb(223, 235, 252);
                         box-shadow: 0 2px 4px rgb(128, 128, 128);
-                        border-radius: 30px;
-                        width: 30%;
+                        border-radius: 0px 30px 30px 0px;
                         padding: 20px;
                         font-size: 25px;
+                        width: 80%;
+                        margin-left: 70px;
+                        margin-bottom: 10px;
 
-                        .day{
+                        .all{
                             display: flex;
-                            max-width: 19px;
-                            overflow: hidden;
-                            background-color: #637d9b;
-                            border-left:8px #1b1a66 solid;
-                            padding: 4px;
-                            color: #FFFFFF;
-                            transition: max-width 1s ease;
-                            font:22px times;
-                            letter-spacing: 10px;
-                            margin-bottom: 10px;
-    
-                            span{color:#ffffff; display:block;}
-    
-                        }:hover {max-width: 220px;
-                        border-radius: 0px 15px 15px 0px;}
+                            justify-content: space-between;
+                            width: 100%;
+
+                            .left{
+                                display: flex;
+                                
+                            .content{
+                                display: flex;
+                                margin-left: 50px;
+                                font-family:cursive;
+                                font-size: 25px;
+                            }
+
+                            .date{
+                                display: flex;
+
+                                .date-short{
+                                    display: flex;
+                                    background: rgb(212, 136, 100);
+                                    padding: 10px;
+                                    border-left: 10px solid rgb(158, 46, 1);
+                                    border-radius: 0px 10px 10px 0px;
+                                    font-size: 20px;
+                                    font-family:cursive;
+                                    color: white;
+                                }
+                                .date-long{
+                                    background: rgb(212, 136, 100);
+                                    padding: 10px;
+                                    border-left: 10px solid rgb(158, 46, 1);
+                                    border-radius: 0px 10px 10px 0px;
+                                    font-size: 20px;
+                                    font-family:cursive;
+                                    color: white;
+                                    visibility: hidden;
+                                    opacity: 0;
+                                    transition: max-width visibility 0s, opacity 0.5s linear;
+                                }
+                            }:hover>.date-long{
+                                visibility: visible;
+                                opacity: 1;
+                                width: 150px;
+                               
+                            }:hover>.date-short{
+                                display: none;
+                            }
+
+                        }
+
+                        .right{
+                            display: flex;
+                            margin-right: 10px;
+                        }:hover{
+                            cursor: pointer;
+                        }
+                   }
+
                     }
                 }
             }
-        }
+        
     }
 }

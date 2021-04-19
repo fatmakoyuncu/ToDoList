@@ -8,50 +8,63 @@ import { TodoService } from '../todo.service';
 })
 export class MonthlyComponent implements OnInit {
 
+  result1;
+  result2;
+
+  filterTodo1;
+  filterTodo2;
+
+  todoWeek;
+  todoWeek2;
+
+  todo;
+  todo2;
+
+  weekNumTodo;
+  weekNumTodo2;
+
   today: Date = new Date();
+
+  today2: Date = new Date();
 
   startDay: Date = new Date();
 
-  endDay = new Date(this.startDay.setDate(this.startDay.getDate() - 60));
+  firstEndDay = new Date(this.startDay.setDate(this.startDay.getDate()-30));
 
-  result;
+  constructor(private todoService: TodoService){}
 
-  filterTodo = [];
+  ngOnInit(){
 
-  weekNumTodo;
+    this.getWeekNum()
+    this.getDay()
+    this.getTodo()
 
-  todo;
-  todoWeek;
-
-  constructor(private todoService: TodoService) { }
-
-  ngOnInit(): void {
-    this.getWeekNumber();
-    this.getDay();
-    this.getToto();
+    this.getWeekNum2()
+    this.getDay2()
+    this.getTodo2()
   }
 
-  getWeekNumber() {
+  getWeekNum(){
     const oneJan = new Date(this.today.getFullYear(), 0, 4);
     const numOfDays = Math.floor((this.today.valueOf() - oneJan.valueOf()) / 86400000);
 
-    this.result = Math.ceil((this.today.getDay() + 1 + numOfDays) / 7);
-    console.log(this.result);
+    this.result1 = Math.ceil((this.today.getDay() + 1 + numOfDays) / 7);
+    console.log(this.result1);
   }
 
-  getDay() {
-    this.filterTodo = this.todoService.todos.filter(day => day.date > this.endDay)
-    console.log(this.filterTodo);
+  getDay(){
+    this.filterTodo1 = this.todoService.todos.filter(day => day.date > this.firstEndDay)
+    console.log(this.filterTodo1);
 
   }
 
-  getToto() {
+  getTodo(){
     this.todoWeek = [];
-    for (let i = this.result; i > this.result - 8; i--) {
+    for (let i = this.result1; i > this.result1 - 4; i--) {
       this.todo = [];
       const todoObj = {
         week: i,
-        data: this.filterTodo.filter(t => {
+        data: this.filterTodo1.filter(t => {
           const oneJan = new Date(t.date.getFullYear(), 0, 4);
           const numOfDays = Math.floor((t.date.valueOf() - oneJan.valueOf()) / 86400000);
 
@@ -68,7 +81,45 @@ export class MonthlyComponent implements OnInit {
     }
 
     console.log(this.todoWeek);
-    
   }
+
+  getWeekNum2(){
+    const oneJan = new Date(this.startDay.getFullYear(), 0, 4);
+    const numOfDays = Math.floor((this.startDay.valueOf() - oneJan.valueOf()) / 86400000);
+
+    this.result2 = Math.ceil((this.startDay.getDay() + 1 + numOfDays) / 7);
+    console.log(this.result2);
+  }
+
+  getDay2(){
+    this.filterTodo2 = this.todoService.todos.filter(day => day.date < this.firstEndDay)
+    console.log(this.filterTodo2);
+  }
+
+  getTodo2(){
+    this.todoWeek2 = [];
+    for (let i = this.result2; i > this.result2 - 4; i--) {
+      this.todo2 = [];
+      const todoObj = {
+        week: i,
+        data: this.filterTodo2.filter(t => {
+          const oneJan = new Date(t.date.getFullYear(), 0, 4);
+          const numOfDays = Math.floor((t.date.valueOf() - oneJan.valueOf()) / 86400000);
+
+          this.weekNumTodo2 = Math.ceil((t.date.getDay() + 1 + numOfDays) / 7);
+          if (this.weekNumTodo2 == i) {
+            this.todo2.push(t)
+          }
+        })
+      }
+
+      todoObj.data = this.todo2;
+      this.todoWeek2.push(todoObj)
+
+    }
+
+    console.log(this.todoWeek2);
+  }
+
 
 }

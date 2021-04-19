@@ -15,7 +15,7 @@
                 </button>
             </form>
             <div class="todoskolarım">
-                <ng-container *ngFor="let tod of todosko; let i=index;">
+                <ng-container *ngFor="let tod of todosko | slice:0:5; let i=index;">
                     <div class="in {{(tod.completed ? 'done' : '') }}">
                         <div class="point">
                             <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="-21 -21 682.66669 682.66669"

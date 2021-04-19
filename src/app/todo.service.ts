@@ -26,6 +26,11 @@ export class TodoService {
       completed: false
     },
     {
+      date: new Date("Fri Apr 16 2021 07:44:57"),
+      content: 'Kitap Oku',
+      completed: false
+    },
+    {
       date: new Date("Fri Apr 11 2021 07:44:57"),
       content: 'Alışveriş Yap',
       completed: false
