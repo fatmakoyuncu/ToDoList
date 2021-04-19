@@ -12,45 +12,40 @@ export class TodosComponent implements OnInit {
 
   inputTodo:string = "";
 
-  todosko: any;
+  todosko = [];
+
   
 
   constructor(private todoService: TodoService) { 
-   
+    this.todosko = this.todoService.todos;
+
   }
 
   ngOnInit(): void {  
-    
-    this.todosko = this.todoService.todos.reverse();   
-    
   }
   
 
   toggleDone (id) {
-    this.todosko.map((v, i) => {
+    this.todoService.todos.map((v, i) => {
       if(i == id) v.completed = !v.completed;
 
       return v;
     })
   }
 
-  deleteTodo (id) {
-    this.todosko = this.todosko.filter((v, i) => i !== id);
-    console.log(this.todosko);
-    
+  deleteTodo (clickedItem) {
+    this.todosko = this.todosko.filter(i => i != clickedItem);
   }
 
   addTodo () {
     
-    this.todosko.reverse().push({
+    this.todosko.push({
       date: new Date(),
       content: this.inputTodo,
       completed: false
     });
 
     this.inputTodo = "";
-    this.ngOnInit()
-    console.log(this.todosko);
     
   }
 

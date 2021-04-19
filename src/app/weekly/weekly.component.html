@@ -38,7 +38,7 @@
                     <div class="all">
                         <div class="left">
                             <div class="date">
-                                <div class="date-short">{{a.date | date:'EEEE'[0]}}</div>
+                                <div class="date-short">{{a.date | date:'EEEE' | slice:0:1}}</div>
                                 <div class="date-long">{{a.date | date:'EEEE'}}</div>
                             </div>
                             <div class="content">{{a.content}}</div>
