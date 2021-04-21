@@ -25,7 +25,7 @@ export class WeeklyComponent implements OnInit {
   filterTodo = [];
 
   todo: Array<any>
-  todo2: Array<string| number>
+  todoAdd: Array<string| number>
 
 
   constructor(private todoService: TodoService, private datePipe: DatePipe) { }
@@ -52,7 +52,7 @@ export class WeeklyComponent implements OnInit {
   }
 
   getTodo() {
-    this.todo2 = []
+    this.todoAdd = []
     for (let i = this.result; i > this.result - 4; i--) {
       this.todo = []
       this.todoObj = {
@@ -67,31 +67,24 @@ export class WeeklyComponent implements OnInit {
         })
       }
       this.todoObj.data = this.todo
-      this.todo2.push(this.todoObj)
+      this.todoAdd.push(this.todoObj)
     }
     
-    console.log(this.todo2);
+    console.log("todo2",this.todoAdd);
 
   }
 
   deleteTodo(t){
+    
+    for (let i = 0; i < this.filterTodo.length; i++) {
+      if (t == this.filterTodo[i]) {
+        this.filterTodo.splice(i,1)
 
-    
-    // this.todo2[1].data.splice(t,1)
-    // this.todo2[2].data.splice(t,1)
-    // this.todo2[3].data.splice(t,1)
-    console.log(t);
-    
-    for (let i = 0; i < this.todoService.todos.length; i++) {
-      if (t == this.todoService.todos[i]) {
-        this.todoService.todos.splice(i,1)
-      }
-     
-      
+      }      
       
     }
-    console.log(this.todoService.todos);
-    
+
+    this.getTodo()
 
   }
 

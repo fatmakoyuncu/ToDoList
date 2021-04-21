@@ -11,7 +11,7 @@
         background: white;
         margin-bottom: 30px;
         border-radius: 0px 0px 55px 55px;
-        font-size: 20px;
+        font-size: 18px;
         width: 100%;
         color: rgb(73, 109, 163);
         font-weight: bold;
@@ -49,7 +49,7 @@
                         align-items: center;
                         
                         background: rgb(73, 109, 163);
-                        padding: 20px;
+                        padding: 10px 20px;
                         border-radius: 7px;                       
                         opacity: 0.8;
                         width: 90%;
@@ -57,7 +57,7 @@
                         
 
                         h3{
-                            font-size: 30px;
+                            font-size: 25px;
                             color: rgb(245, 239, 239);
                             font-weight: bold;
                             margin: 0px;
@@ -71,24 +71,26 @@
                         box-shadow: 0 2px 4px rgb(128, 128, 128);
                         border-radius: 0px 30px 30px 0px;
                         padding: 20px;
-                        font-size: 25px;
+                        font-size: 20px;
                         width: 80%;
                         margin-left: 70px;
                         margin-bottom: 10px;
 
                         .all{
                             display: flex;
+                            align-items: center;
                             justify-content: space-between;
                             width: 100%;
 
                             .left{
                                 display: flex;
+                                align-items: center;
                                 
                             .content{
                                 display: flex;
                                 margin-left: 50px;
                                 font-family:cursive;
-                                font-size: 25px;
+                                font-size: 22px;
                             }
 
                             .date{
@@ -96,30 +98,31 @@
 
                                 .date-short{
                                     display: flex;
-                                    background: rgb(212, 136, 100);
+                                    background: rgb(233, 139, 140);
                                     padding: 10px;
-                                    border-left: 10px solid rgb(158, 46, 1);
+                                    border-left: 10px solid rgb(192, 82, 84);
                                     border-radius: 0px 10px 10px 0px;
                                     font-size: 20px;
                                     font-family:cursive;
                                     color: white;
                                 }
                                 .date-long{
-                                    background: rgb(212, 136, 100);
+                                    background: rgb(233, 139, 140);
                                     padding: 10px;
-                                    border-left: 10px solid rgb(158, 46, 1);
+                                    border-left: 10px solid rgb(192, 82, 84);
                                     border-radius: 0px 10px 10px 0px;
                                     font-size: 20px;
                                     font-family:cursive;
                                     color: white;
                                     visibility: hidden;
                                     opacity: 0;
-                                    transition: max-width visibility 0s, opacity 0.5s linear;
+                                    transition: width 0.8s, opacity 0.5s linear;
+                                    width: 0px;
                                 }
                             }:hover>.date-long{
                                 visibility: visible;
                                 opacity: 1;
-                                width: 150px;
+                                width: 120px;
                                
                             }:hover>.date-short{
                                 display: none;
@@ -130,6 +133,7 @@
                         .right{
                             display: flex;
                             margin-right: 10px;
+                            padding: 10px;
                         }:hover{
                             cursor: pointer;
                         }

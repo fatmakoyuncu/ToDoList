@@ -12,12 +12,12 @@ export class TodosComponent implements OnInit {
 
   inputTodo:string = "";
 
-  todosko = [];
+  todo = [];
 
   
 
   constructor(private todoService: TodoService) { 
-    this.todosko = this.todoService.todos;
+    this.todo = this.todoService.todos;
 
   }
 
@@ -26,7 +26,7 @@ export class TodosComponent implements OnInit {
   
 
   toggleDone (id) {
-    this.todoService.todos.map((v, i) => {
+    this.todo.map((v, i) => {
       if(i == id) v.completed = !v.completed;
 
       return v;
@@ -34,19 +34,23 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo (clickedItem) {
-    this.todosko = this.todosko.filter(i => i != clickedItem);
+    this.todo = this.todo.filter(i => i != clickedItem);
   }
 
   addTodo () {
     
-    this.todosko.push({
+    this.todo.push({
       date: new Date(),
       content: this.inputTodo,
       completed: false
     });
 
     this.inputTodo = "";
-    
+ 
+  }
+
+  deleteSelected(){
+    this.todo = this.todo.filter(i => !i.completed);
   }
 
   
